@@ -25,7 +25,7 @@ const GoalsContainer = () => {
         return<Loading center />
     }
     
-    if(goals.length === 0){
+    if(goals === 0){
         return(
             <Wrapper>
                 <h2>No goals to display...</h2>

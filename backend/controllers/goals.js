@@ -26,10 +26,27 @@ const authorizedMember = asyncHandler(async(req,res) => {
 //@route GET /api/v1/goals
 //@access Private
 const getGoals = asyncHandler(async(req,res) => {
-    authorizedMember(req,res)
+    // authorizedMember(req,res)
+
+    const goal = await Goals.findOne({member:req.member.id})
+    if(!goal){
+        res.status(StatusCodes.OK).json({goals:0,totalGoals:0,numOfPages:0})
+        return
+        // throw new Error('Goal not found')
+    }
+    if(!req.member){
+        res.status(400)
+        throw new Error('User not found')
+    }
+    // console.log(goal)
+    if(goal.member.toString()!==req.member.id){
+        res.status(401)
+        throw new Error('User not authorized')
+    }
+
     const{sort,search}  = req.query
     const queryObject = {
-        createdBy:req.member.id,
+        member:req.member.id,
     }
     
     if(search){
