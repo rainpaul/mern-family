@@ -1,6 +1,10 @@
 {
   "name": "mern-family",
   "version": "1.0.0",
+  "engine":{
+    "node": "14.17.4",
+    "npm": "6.14.14"
+  },
   "description": "To have our family's members list and interaction",
   "main": "index.js",
   "scripts": {
@@ -25,8 +29,5 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.5.5"
   },
-  "engine":{
-    "node": "14.17.4",
-    "npm": "6.14.14"
-  }
+  
 }
