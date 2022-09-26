@@ -13,6 +13,8 @@
     "client": "npm start --prefix frontend",
     "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
     "build": "CI= react-scripts build",
+    "install-frontend": "cd frontend && npm install",
+    "build-frontend": "cd frontend && npm run build",
     "heroku-postbuild": "npm run install-frontend && npm run build-frontend"
 
   },
