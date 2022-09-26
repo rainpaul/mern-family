@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "To have our family's members list and interaction",
   "engine":{
-    "node": "^14.17.4",
-    "npm": "^6.14.14"
+    "node": "14.17.4",
+    "npm": "6.14.14"
   },
   "main": "index.js",
   "scripts": {
