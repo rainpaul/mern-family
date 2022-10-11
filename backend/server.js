@@ -8,7 +8,7 @@ dotenv.config()
 const colors = require('colors')
 const errorHandler = require('./middleware/errorMiddleware')
 
-const port = 5000 | process.env.PORT
+const port = 5000 || process.env.PORT
 app.use(express.json())
 app.use(errorHandler)
 app.use('/api/v1/members',memberRoute)
